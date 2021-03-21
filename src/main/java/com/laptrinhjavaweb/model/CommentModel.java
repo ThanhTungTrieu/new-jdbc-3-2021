@@ -29,5 +29,5 @@ public class CommentModel extends AbstractModel {
 	public void setNewsId(Long newsId) {
 		this.newsId = newsId;
 	}
-
+	
 }
