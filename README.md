@@ -1,5 +1,15 @@
 # NEWS WEBSITE
 
+## Thành viên:
+
+- Nguyễn Thị Thuỳ Trang
+- Dương Quang Tùng
+- Triệu Thanh Tùng
+
+## Giới thiệu:
+
+Website cập nhật tin tức
+
 ## Đối tượng phục vụ:
 
 - Độc giả
