@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import com.laptrinhjavaweb.dao.INewsDAO;
 import com.laptrinhjavaweb.model.NewsModel;
+import com.laptrinhjavaweb.paging.Pageble;
 import com.laptrinhjavaweb.service.INewsService;
 
 public class NewsService implements INewsService {
@@ -44,6 +45,16 @@ public class NewsService implements INewsService {
 			// TODO: delete comments
 			newsDAO.delete(id);
 		}
+	}
+
+	@Override
+	public List<NewsModel> findAll(Pageble pageble) {
+		return newsDAO.findAll(pageble);
+	}
+
+	@Override
+	public int getTotalItem() {
+		return newsDAO.getTotalItem();
 	}
 
 }

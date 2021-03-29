@@ -5,6 +5,8 @@ import java.util.List;
 import com.laptrinhjavaweb.dao.INewsDAO;
 import com.laptrinhjavaweb.mapper.NewsMapper;
 import com.laptrinhjavaweb.model.NewsModel;
+import com.laptrinhjavaweb.paging.Pageble;
+import com.laptrinhjavaweb.sort.Sorter;
 
 public class NewsDAO extends AbstractDAO<NewsModel> implements INewsDAO {
 
@@ -47,5 +49,23 @@ public class NewsDAO extends AbstractDAO<NewsModel> implements INewsDAO {
 		String sql = "DELETE FROM news WHERE id = ?";
 		update(sql, id);
 
+	}
+
+	@Override
+	public List<NewsModel> findAll(Pageble pageble) {
+		StringBuilder sql = new StringBuilder("SELECT * FROM news");
+		if (pageble.getSorter() != null) {
+			sql.append(" ORDER BY " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy());
+		}
+		if (pageble.getOffset() != null && pageble.getLimt() != null) {
+			sql.append(" LIMIT " + pageble.getOffset() + ", " + pageble.getLimt());
+		}
+		return query(sql.toString(), new NewsMapper());
+	}
+
+	@Override
+	public int getTotalItem() {
+		String sql = "SELECT count(*) FROM news";
+		return count(sql);
 	}
 }
