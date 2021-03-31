@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="/common/taglib.jsp"%>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
@@ -10,13 +11,19 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
+				<li class="nav-item active"><a class="nav-link" href="#">Trang chủ
 						<span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Services</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+				<c:if test="${not empty USERMODEL}">
+					<li class="nav-item"><a class="nav-link" href="#">Xin chào, ${USERMODEL.fullname}</a></li>
+					<li class="nav-item"><a class="nav-link" href="<c:url value='/thoat?action=logout' /> ">Thoát</a></li>
+				</c:if>
+				<c:if test="${empty USERMODEL}">
+					<li class="nav-item"><a class="nav-link" href="<c:url value='/dang-nhap?action=login' /> ">Đăng nhập</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</div>

@@ -6,7 +6,6 @@ import com.laptrinhjavaweb.dao.INewsDAO;
 import com.laptrinhjavaweb.mapper.NewsMapper;
 import com.laptrinhjavaweb.model.NewsModel;
 import com.laptrinhjavaweb.paging.Pageble;
-import com.laptrinhjavaweb.sort.Sorter;
 
 public class NewsDAO extends AbstractDAO<NewsModel> implements INewsDAO {
 
