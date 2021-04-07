@@ -17,12 +17,14 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	
 	ResourceBundle dbBundle = ResourceBundle.getBundle("db");
 	
+	ResourceBundle remoteMySQL = ResourceBundle.getBundle("remotemysql");
+	
 	public Connection getConnection() {
 		try {
-			Class.forName(dbBundle.getString("driverName"));
-			String url = dbBundle.getString("url");
-			String user = dbBundle.getString("user");
-			String password = dbBundle.getString("password");
+			Class.forName(remoteMySQL.getString("driverName"));
+			String url = remoteMySQL.getString("url");
+			String user = remoteMySQL.getString("user");
+			String password = remoteMySQL.getString("password");
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			return null;
