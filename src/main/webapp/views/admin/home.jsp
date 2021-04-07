@@ -1,5 +1,7 @@
+<%@include file="/common/taglib.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<c:url var="AdminHomeURL" value="/admin-home" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +13,7 @@
 		<div class="main-content-inner">
 			<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 				<ul class="breadcrumb">
-					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Trang
+					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="${AdminHomeURL}" >Trang
 							chủ</a></li>
 				</ul>
 				<!-- /.breadcrumb -->
