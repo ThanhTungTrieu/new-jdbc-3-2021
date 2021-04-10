@@ -17,7 +17,7 @@ import com.laptrinhjavaweb.service.IUserService;
 import com.laptrinhjavaweb.utils.FormUtil;
 import com.laptrinhjavaweb.utils.SessionUtil;
 
-@WebServlet(urlPatterns = { "/trang-chu", "/dang-nhap", "/thoat" })
+@WebServlet(urlPatterns = { "/trang-chu", "/dang-nhap", "/thoat", "/dang-ky" })
 public class HomeController extends HttpServlet {
 	
 	@Inject
@@ -40,7 +40,7 @@ public class HomeController extends HttpServlet {
 		if (action != null && action.equals("login")) {
 			String message = request.getParameter("message");
 			String alert = request.getParameter("alert");
-			if (message != null & alert != null) {
+			if (message != null && alert != null) {
 				request.setAttribute("message", messageBundle.getString(message));
 				request.setAttribute("alert", alert);
 			}
@@ -49,6 +49,9 @@ public class HomeController extends HttpServlet {
 		} else if (action != null && action.equals("logout")) {
 			SessionUtil.getInstance().removeValue(request, "USERMODEL");
 			response.sendRedirect(request.getContextPath() + "/trang-chu");
+		} else if (action != null && action.equals("register")) {
+			RequestDispatcher rd = request.getRequestDispatcher("/views/register.jsp");
+			rd.forward(request, response);
 		} else {
 			request.setAttribute("categories", categoryService.findAll());
 			RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");

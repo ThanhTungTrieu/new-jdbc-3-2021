@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.laptrinhjavaweb.dao.ICategoryDAO;
 import com.laptrinhjavaweb.mapper.CategoryMapper;
-import com.laptrinhjavaweb.mapper.NewsMapper;
 import com.laptrinhjavaweb.model.CategoryModel;
-import com.laptrinhjavaweb.model.NewsModel;
 
 public class CategoryDAO extends AbstractDAO<CategoryModel> implements ICategoryDAO {
 	
