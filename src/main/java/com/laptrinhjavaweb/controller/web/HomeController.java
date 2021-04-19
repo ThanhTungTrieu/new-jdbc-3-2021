@@ -11,9 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.laptrinhjavaweb.constant.SystemConstant;
+import com.laptrinhjavaweb.model.NewsModel;
 import com.laptrinhjavaweb.model.UserModel;
+import com.laptrinhjavaweb.paging.PageRequest;
+import com.laptrinhjavaweb.paging.Pageble;
 import com.laptrinhjavaweb.service.ICategoryService;
+import com.laptrinhjavaweb.service.INewsService;
 import com.laptrinhjavaweb.service.IUserService;
+import com.laptrinhjavaweb.sort.Sorter;
 import com.laptrinhjavaweb.utils.FormUtil;
 import com.laptrinhjavaweb.utils.SessionUtil;
 
@@ -25,6 +31,9 @@ public class HomeController extends HttpServlet {
 
 	@Inject
 	private IUserService userService;
+	
+	@Inject
+	private INewsService newsService;
 	
 	ResourceBundle messageBundle = ResourceBundle.getBundle("message");
 	
@@ -53,6 +62,12 @@ public class HomeController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/register.jsp");
 			rd.forward(request, response);
 		} else {
+			NewsModel model = FormUtil.toModel(NewsModel.class, request);
+			Pageble pageble = new PageRequest(new Sorter(model.getSortName(), model.getSortBy()), model.getPage(), 6);
+			model.setListResult(newsService.findAll(pageble));
+			model.setTotalItem(newsService.getTotalItem());
+			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / 6));
+			request.setAttribute(SystemConstant.MODEL, model);
 			request.setAttribute("categories", categoryService.findAll());
 			RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
 			rd.forward(request, response);

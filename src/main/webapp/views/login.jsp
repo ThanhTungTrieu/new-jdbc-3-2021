@@ -39,7 +39,7 @@
 
 					</div>
 					<div class="forgot">
-						<a href="<c:url value='/dang-ky?action=register' />">Đăng ký</a>
+						<a href="<c:url value='/dang-ky?action=register' />">Chưa có tài khoản? Đăng ký</a>
 					</div>
 					<button type="submit" class="btn btn-primary">Đăng nhập</button>
 					<input type="hidden" value="login" name="action" />
