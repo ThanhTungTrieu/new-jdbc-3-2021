@@ -132,7 +132,7 @@
 										<small>(v1.3.3)</small>
 									</strong>,
 									Đây là phiên bản thử nghiệm của website <a
-										href="https://github.com/bopoda/ace">github</a> (with minified ace js files).
+										href="https://github.com/ThanhTungTrieu/new-jdbc-3-2021">github</a>.
 								</div>
 
 								<div class="row">
