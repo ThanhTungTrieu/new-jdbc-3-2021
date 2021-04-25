@@ -57,7 +57,7 @@ public class HomeController extends HttpServlet {
 			rd.forward(request, response);
 		} else if (action != null && action.equals("logout")) {
 			SessionUtil.getInstance().removeValue(request, "USERMODEL");
-			response.sendRedirect(request.getContextPath() + "/trang-chu");
+			response.sendRedirect(request.getContextPath() + "/trang-chu?page=1&maxPageItem=6");
 		} else if (action != null && action.equals("register")) {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/register.jsp");
 			rd.forward(request, response);
@@ -83,7 +83,7 @@ public class HomeController extends HttpServlet {
 			if (userModel != null) {
 				SessionUtil.getInstance().putValue(request, "USERMODEL", userModel);
 				if (userModel.getRole().getCode().equals("USER")) {
-					response.sendRedirect(request.getContextPath() + "/trang-chu");
+					response.sendRedirect(request.getContextPath() + "/trang-chu?page=1&maxPageItem=6");
 				} else if (userModel.getRole().getCode().equals("ADMIN")) {
 					response.sendRedirect(request.getContextPath() + "/admin-home");
 				}
