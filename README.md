@@ -18,12 +18,27 @@ Website cập nhật tin tức
 ## Chức năng:
 ### Đối với độc giả:
 
-_Coming soon!_
+- Đăng ký tài khoản
+- Đăng nhập
+- Đọc chi tiết các bài viết
+- Phân loại các bài viết theo thể loại
+- Thêm, sửa, xoá bình luận (Đang phát triển)
 
 ### Đối với quản lý:
 
-_Coming soon!_
+- Xem tất cả các bài viết
+- Thêm, sửa, xoá bài viết
+- Thêm, xoá bình luận (Đang phát triển)
 
+## Công nghệ sử dụng:
+
+### Front-end:
+- Boostrap
+- Jquery
+### Back-end:
+- JEE
+- JDBC
+- MySQL
 
 ![image](https://user-images.githubusercontent.com/67427236/112013167-69032d00-8b5c-11eb-9ee1-2c188a4798a4.png)
 
