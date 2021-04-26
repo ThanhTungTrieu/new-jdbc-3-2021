@@ -72,4 +72,9 @@ public class NewsService implements INewsService {
 		return newsModel;
 	}
 
+	@Override
+	public List<NewsModel> findByCategoryId(Pageble pageble, Long categoryId) {
+		return newsDAO.findByCategoryId(pageble, categoryId);
+	}
+
 }

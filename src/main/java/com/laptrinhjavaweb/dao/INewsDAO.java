@@ -13,4 +13,5 @@ public interface INewsDAO extends GenericDAO<NewsModel> {
 	void delete(long id);
 	List<NewsModel> findAll(Pageble pageble);
 	int getTotalItem();
+	List<NewsModel> findByCategoryId(Pageble pageble, Long categoryId);
 }

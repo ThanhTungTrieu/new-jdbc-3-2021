@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.model.NewsModel;
 import com.laptrinhjavaweb.model.UserModel;
@@ -73,7 +75,12 @@ public class HomeController extends HttpServlet {
 		} else {
 			NewsModel model = FormUtil.toModel(NewsModel.class, request);
 			Pageble pageble = new PageRequest(new Sorter(model.getSortName(), model.getSortBy()), model.getPage(), 6);
-			model.setListResult(newsService.findAll(pageble));
+			if (action != null && action.equals("findByCategoryId")) {
+				String categoryId = request.getParameter("categoryId");
+				model.setListResult(newsService.findByCategoryId(pageble, Long.parseLong(categoryId)));
+			} else {
+				model.setListResult(newsService.findAll(pageble));
+			}
 			model.setTotalItem(newsService.getTotalItem());
 			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / 6));
 			request.setAttribute(SystemConstant.MODEL, model);

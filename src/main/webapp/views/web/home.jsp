@@ -15,7 +15,11 @@
 					<h1 class="my-4">Thể loại</h1>
 					<div class="list-group">
 						<c:forEach var="item" items="${categories}">
-							<a href="#" class="list-group-item">${item.name}</a>
+							<c:url var="findByCategoryIdURL" value="/trang-chu">
+								<c:param name="action" value="findByCategoryId"></c:param>
+								<c:param name="categoryId" value="${item.id}"></c:param>
+							</c:url>
+							<a href="${findByCategoryIdURL}" class="list-group-item">${item.name}</a>
 						</c:forEach>
 					</div>
 

@@ -69,4 +69,18 @@ public class NewsDAO extends AbstractDAO<NewsModel> implements INewsDAO {
 		String sql = "SELECT count(*) FROM news";
 		return count(sql);
 	}
+
+	@Override
+	public List<NewsModel> findByCategoryId(Pageble pageble, Long categoryId) {
+		StringBuilder sql = new StringBuilder("SELECT * FROM news WHERE categoryId = ?");
+		if (pageble.getSorter() != null && StringUtils.isNotBlank(pageble.getSorter().getSortName()) && StringUtils.isNotBlank(pageble.getSorter().getSortBy())) {
+			sql.append(" ORDER BY " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy());
+		}
+		if (pageble.getOffset() != null && pageble.getLimt() != null) {
+			sql.append(" LIMIT " + pageble.getOffset() + ", " + pageble.getLimt());
+		}
+		return query(sql.toString(), new NewsMapper(), categoryId);
+	}
+	
+	
 }

@@ -13,4 +13,5 @@ public interface INewsService {
 	List<NewsModel> findAll(Pageble pageble);
 	int getTotalItem();
 	NewsModel findOne(Long id);
+	List<NewsModel> findByCategoryId(Pageble pageble, Long categoryId);
 }
