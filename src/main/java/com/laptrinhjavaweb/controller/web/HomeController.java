@@ -61,6 +61,15 @@ public class HomeController extends HttpServlet {
 		} else if (action != null && action.equals("register")) {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/register.jsp");
 			rd.forward(request, response);
+		} else if(action != null && action.equals("read")) {
+			NewsModel model = FormUtil.toModel(NewsModel.class, request);
+			if (model.getId() != null) {
+				model = newsService.findOne(model.getId());
+			}
+			request.setAttribute(SystemConstant.MODEL, model);
+			request.setAttribute("categories", categoryService.findAll());
+			RequestDispatcher rd = request.getRequestDispatcher("/views/web/news/read.jsp");
+			rd.forward(request, response);
 		} else {
 			NewsModel model = FormUtil.toModel(NewsModel.class, request);
 			Pageble pageble = new PageRequest(new Sorter(model.getSortName(), model.getSortBy()), model.getPage(), 6);

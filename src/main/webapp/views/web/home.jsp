@@ -57,8 +57,12 @@
 										<a href="#"><img class="card-img-top" src="${item.thumbnail}" height="165px"
 												alt="thumbnail"></a>
 										<div class="card-body">
+											<c:url var="readURL" value="/trang-chu">
+												<c:param name="action" value="read" />
+												<c:param name="id" value="${item.id}" />
+											</c:url>
 											<h4 class="card-title">
-												<a href="#">${item.title}</a>
+												<a href="${readURL}">${item.title}</a>
 											</h4>
 											<p class="card-text">${item.shortDescription}</p>
 										</div>
