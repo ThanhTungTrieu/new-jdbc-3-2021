@@ -26,7 +26,7 @@ Website cập nhật tin tức
 
 ### Đối với quản lý:
 
-- Xem tất cả các bài viết
+- Xem tất cả các bài viết (có sắp xếp hoặc không)
 - Thêm, sửa, xoá bài viết
 - Thêm, xoá bình luận (Đang phát triển)
 
