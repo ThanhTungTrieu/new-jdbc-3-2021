@@ -36,7 +36,7 @@ Website cập nhật tin tức
 - Boostrap
 - Jquery
 ### Back-end:
-- JEE (JSP, Servlet, JavaBeans, ...)
+- JEE (JSP, Servlet, JavaBeans, RESTful web service, ...)
 - JDBC
 - MySQL
 
