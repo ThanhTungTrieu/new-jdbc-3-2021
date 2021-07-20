@@ -4,7 +4,7 @@
 		<html>
 
 		<head>
-			<title>Trang chủ</title>
+			<title>Homepage</title>
 		</head>
 
 		<body>
@@ -12,7 +12,7 @@
 
 				<div class="col-lg-3">
 
-					<h1 class="my-4">Thể loại</h1>
+					<h1 class="my-4">Categories</h1>
 					<div class="list-group">
 						<c:forEach var="item" items="${categories}">
 							<c:url var="findByCategoryIdURL" value="/trang-chu">

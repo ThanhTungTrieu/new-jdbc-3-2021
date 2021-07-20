@@ -38,7 +38,7 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"></span>
-                Quản lý bài viết
+                News management
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
@@ -46,7 +46,7 @@
                 <li>
                     <a href='<c:url value="/admin-news?type=list&page=1&maxPageItem=10&sortName=title&sortBy=desc"/> '>
                         <i class="menu-icon fa fa-caret-right"></i>
-                        DS bài viết
+                        News list
                     </a>
                     <b class="arrow"></b>
                 </li>

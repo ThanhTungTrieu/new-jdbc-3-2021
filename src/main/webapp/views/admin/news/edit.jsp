@@ -6,7 +6,7 @@
         <html>
 
         <head>
-            <title>Chỉnh sửa bài viết</title>
+            <title>Edit</title>
         </head>
 
         <body>
@@ -19,9 +19,9 @@
                         <ul class="breadcrumb">
                             <li>
                                 <i class="ace-icon fa fa-home home-icon"></i>
-                                <a href="${AdminHomeURL}">Trang chủ</a>
+                                <a href="${AdminHomeURL}">Admin home</a>
                             </li>
-                            <li class="active">Chỉnh sửa bài viết</li>
+                            <li class="active">Edit</li>
                         </ul><!-- /.breadcrumb -->
                     </div>
                     <div class="page-content">
@@ -34,17 +34,17 @@
                                 </c:if>
                                 <form id="formSubmit">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right">Thể loại</label>
+                                        <label class="col-sm-3 control-label no-padding-right">Category</label>
                                         <div class="col-sm-9">
                                             <select class="form-control" id="categoryCode" name="categoryCode">
                                                 <c:if test="${empty model.categoryCode}">
-                                                    <option value="">Chọn loại bài viết</option>
+                                                    <option value="">Select an option</option>
                                                     <c:forEach var="item" items="${categories}">
                                                         <option value="${item.code}">${item.name}</option>
                                                     </c:forEach>
                                                 </c:if>
                                                 <c:if test="${not empty model.categoryCode}">
-                                                    <option value="">Chọn loại bài viết</option>
+                                                    <option value="">Select an option</option>
                                                     <c:forEach var="item" items="${categories}">
                                                         <option value="${item.code}" <c:if
                                                             test="${item.code == model.categoryCode}">
@@ -60,7 +60,7 @@
                                     <br />
                                     <br />
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right">Tiêu đề</label>
+                                        <label class="col-sm-3 control-label no-padding-right">Title</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" id="title" name="title"
                                                 value="${model.title}" />
@@ -69,7 +69,7 @@
                                     <br />
                                     <br />
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right">Hình đại diện</label>
+                                        <label class="col-sm-3 control-label no-padding-right">Thumbnail</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" id="thumbnail" name="thumbnail"
                                                 value="${model.thumbnail}" />
@@ -78,7 +78,7 @@
                                     <br />
                                     <br />
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right">Mô tả ngắn</label>
+                                        <label class="col-sm-3 control-label no-padding-right">Description</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" id="shortDescription"
                                                 name="shortDescription" value="${model.shortDescription}" />
@@ -87,7 +87,7 @@
                                     <br />
                                     <br />
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label no-padding-right">Nội dung</label>
+                                        <label class="col-sm-3 control-label no-padding-right">Content</label>
                                         <div class="col-sm-9">
                                             <textarea rows="" cols="" id="content" name="content"
                                                 style="width: 820px;height: 175px">${model.content}</textarea>
@@ -99,11 +99,11 @@
                                         <div class="col-sm-12">
                                             <c:if test="${not empty model.id}">
                                                 <input type="button" class="btn btn-white btn-warning btn-bold"
-                                                    value="Cập nhật bài viết" id="btnAddOrUpdateNews" />
+                                                    value="Update" id="btnAddOrUpdateNews" />
                                             </c:if>
                                             <c:if test="${empty model.id}">
                                                 <input type="button" class="btn btn-white btn-warning btn-bold"
-                                                    value="Thêm bài viết" id="btnAddOrUpdateNews" />
+                                                    value="Create" id="btnAddOrUpdateNews" />
                                             </c:if>
                                         </div>
                                     </div>

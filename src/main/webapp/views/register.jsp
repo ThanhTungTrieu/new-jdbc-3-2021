@@ -9,12 +9,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Đăng ký</title>
+<title>Register</title>
 </head>
 <body>
 	<div class="container">
 		<h1 class="form-heading">
-			<a href="${HomeURL}" class="form-heading">Trang chủ</a>
+			<a href="${HomeURL}" class="form-heading">Homepage</a>
 		</h1>
 		<div class="login-form">
 			<div class="main-div">
@@ -22,33 +22,33 @@
 					<div class="alert alert-${alert}">${message}</div>
 				</c:if>
 				<div class="panel">
-					<h2>Đăng ký</h2>
-					<p>Điền thông tin đăng ký</p>
+					<h2>Register</h2>
+					<p>Fill in forms</p>
 				</div>
 				<form id="form-register">
 
 					<div class="form-group">
 
 						<input type="text" class="form-control" id="username"
-							name="username" placeholder="Tên đăng nhập" value="${userModel.username}" />
+							name="username" placeholder="Username" value="${userModel.username}" />
 
 					</div>
 
 					<div class="form-group">
 
 						<input type="password" class="form-control" id="password"
-							name="password" placeholder="Mật khẩu" value="${userModel.password}" />
+							name="password" placeholder="Password" value="${userModel.password}" />
 
 					</div>
 
 					<div class="form-group">
 
 						<input type="text" class="form-control" id="fullname"
-							name="fullname" placeholder="Tên đầy đủ" value="${userModel.fullname}" />
+							name="fullname" placeholder="Fullname" value="${userModel.fullname}" />
 
 					</div>
 
-					<input type="button" value="Đăng ký" class="btn btn-primary" id="registerButton" />
+					<input type="button" value="Register" class="btn btn-primary" id="registerButton" />
 
 				</form>
 			</div>

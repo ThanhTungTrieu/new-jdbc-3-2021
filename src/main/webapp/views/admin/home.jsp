@@ -6,7 +6,7 @@
 
 		<head>
 			<meta charset="UTF-8">
-			<title>Trang chủ</title>
+			<title>Admin home</title>
 		</head>
 
 		<body>
@@ -14,8 +14,8 @@
 				<div class="main-content-inner">
 					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
-							<li><i class="ace-icon fa fa-home home-icon"></i> <a href="${AdminHomeURL}">Trang
-									chủ</a></li>
+							<li><i class="ace-icon fa fa-home home-icon"></i> <a href="${AdminHomeURL}">Admin
+									home</a></li>
 						</ul>
 						<!-- /.breadcrumb -->
 					</div>
@@ -126,12 +126,12 @@
 
 									<i class="ace-icon fa fa-check green"></i>
 
-									Xin chào 
+									Welcome, 
 									<strong class="green">
 										Admin
 										<small>(v1.3.3)</small>
 									</strong>,
-									Đây là phiên bản thử nghiệm của website <a
+									This is a test version of the site <a
 										href="https://github.com/ThanhTungTrieu/new-jdbc-3-2021">github</a>.
 								</div>
 

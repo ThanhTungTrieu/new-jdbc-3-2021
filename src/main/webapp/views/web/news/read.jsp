@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Chi tiết</title>
+<title>News</title>
 </head>
 <body>
 	<div class="row">
 
       <div class="col-lg-3">
-        <h1 class="my-4">Thể loại</h1>
+        <h1 class="my-4">Categories</h1>
         <div class="list-group">
         	<c:forEach var="item" items="${categories}" >	
             <c:url var="findByCategoryIdURL" value="/trang-chu">

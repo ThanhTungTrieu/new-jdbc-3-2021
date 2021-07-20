@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Đăng nhập</title>
+<title>Login</title>
 </head>
 <body>
 	<div class="container">
 		<h1 class="form-heading">
-			<a href="${HomeURL}" class="form-heading">Trang chủ</a>
+			<a href="${HomeURL}" class="form-heading">Homepage</a>
 		</h1>
 		<div class="login-form">
 			<div class="main-div">
@@ -19,8 +19,8 @@
 					<div class="alert alert-${alert}">${message}</div>
 				</c:if>
 				<div class="panel">
-					<h2>Đăng nhập</h2>
-					<p>Nhập tên đăng nhập và mật khẩu</p>
+					<h2>Login</h2>
+					<p>Username and password</p>
 				</div>
 				<form action="<c:url value='/dang-nhap'/>" id="form-login"
 					method="POST">
@@ -28,20 +28,20 @@
 					<div class="form-group">
 
 						<input type="text" class="form-control" id="username"
-							name="username" placeholder="Tên đăng nhập">
+							name="username" placeholder="Username">
 
 					</div>
 
 					<div class="form-group">
 
 						<input type="password" class="form-control" id="password"
-							name="password" placeholder="Mật khẩu">
+							name="password" placeholder="Password">
 
 					</div>
 					<div class="forgot">
-						<a href="<c:url value='/dang-ky?action=register' />">Chưa có tài khoản? Đăng ký</a>
+						<a href="<c:url value='/dang-ky?action=register' />">Register</a>
 					</div>
-					<button type="submit" class="btn btn-primary">Đăng nhập</button>
+					<button type="submit" class="btn btn-primary">Login</button>
 					<input type="hidden" value="login" name="action" />
 
 				</form>
