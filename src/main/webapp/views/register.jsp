@@ -23,7 +23,7 @@
 				</c:if>
 				<div class="panel">
 					<h2>Register</h2>
-					<p>Fill in forms</p>
+					<p>Fill in the form below</p>
 				</div>
 				<form id="form-register">
 
