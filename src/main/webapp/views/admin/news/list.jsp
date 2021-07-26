@@ -59,7 +59,7 @@
 											<thead>
 												<tr>
 													<th><input type="checkbox" id="checkAll"></th>
-													<th>Titlet</th>
+													<th>Title</th>
 													<th>Short Descripton</th>
 													<th>Action</th>
 												</tr>
